@@ -1,0 +1,38 @@
+{
+  "$id": "https://example.com/arrays.schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "description": "List of Location Scans",
+  "title": "SCANLOCS",
+  "type": "object",
+  "properties": {
+    "scans": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scandata" }
+    }
+  },
+  "$defs": {
+    "scandata": {
+      "type": "object",
+      "properties": {
+        "scanid": {
+          "type": "number"
+        },
+        "current_loc": {
+          "type": "string"
+        },
+        "scanned_itemid": {
+          "type": "string"
+        },
+        "scantimestamp": {
+          "type": "string"
+        },
+        "invtype": {
+          "type": "number"
+        },
+        "machname": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
