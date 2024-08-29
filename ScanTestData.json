@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "scans": [
+    {
+      "scanid": "1",
+      "current_loc": "4001",
+      "scanned_itemid": "OR1234-1001",
+      "scantimestamp": "3/26/2024 11:50:00 AM",
+      "invtype": "3",
+      "machname": null
+    },
+    {
+      "scanid": "2",
+      "current_loc": "4901",
+      "scanned_itemid": "ST1234-1",
+      "scantimestamp": "3/26/2024 2:00:00 PM",
+      "invtype": "2",
+      "machname": "HURDY GURDY"
+    },
+    {
+      "scanid": "3",
+      "current_loc": "2901",
+      "scanned_itemid": "F-123456",
+      "scantimestamp": "3/26/2024 2:00:00 PM",
+      "invtype": "1",
+      "machname": "CARD #1"
+    },
+    {
+      "scanid": "4",
+      "current_loc": "3901",
+      "scanned_itemid": "ST1234-2",
+      "scantimestamp": "3/30/2024 2:22:22 PM",
+      "invtype": "2",
+      "machname": "CARD #2"
+    },
+    {
+      "scanid": "5",
+      "current_loc": "4002",
+      "scanned_itemid": "ST1234-1001",
+      "scantimestamp": "4/1/2024 8:00:00 AM",
+      "invtype": "3",
+      "machname": null
+    }
+  ]
+}
