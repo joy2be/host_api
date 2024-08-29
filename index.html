@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machines</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="light-theme">
+        <br />
+        <br />
+        <table align="left" width="100%">
+            <tr>
+                <td align="right">
+                    <h1>Task List</h1>
+                    <p id="msg">Theme switch works!!!</p>
+                </td>
+                <td>
+                </td>
+                <td align="left">
+                    <ul>
+                        <li class="list">Add visual styles</li>
+                        <li class="list">Add light and dark themes</li>
+                        <li class="list">Enable switching the theme</li>
+                        <li>Add database connection</li>
+                        <li>Add SQL statement to populate table below</li>
+                        <li>Add variable to build folder structure for forms</li>
+                        <li>Use the var on "Review" to open the set-up form for each row</li>
+                    </ul>
+                    <div>
+                        <button class="btnTheme">Dark</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!-- This is where the .asp stuff should be -->
+        <table id="mainMenuMainTableBody" align="center">
+            <tr class="headerTr">
+                <td class="rigTD" valign="middle"> &nbsp;</td>
+                <td valign="top" rowspan="2" style="text-align: right"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="Img/bdxmSmall.png" /></td> <!-- 7/17/24 Chgd src from "\\bdx-app01\BDXMobile\Media\bdxmSmall.png"); -->
+                </tr>
+                <tr><td class="formTitle" valign="bottom" align="right">&nbsp;&nbsp;<label>BDX Machine Set-ups<br /></label>&nbsp;&nbsp;Based on Products&nbsp;&nbsp;</td></tr>
+                <tr class="redStripe"><td colspan="2"> </td></tr>
+                <tr>
+                    <td style="font-size: medium;" class="style4" nowrap="nowrap">Product Code:</td>
+                    <td colspan="1"><select name="prodCode" id="prodCode"> <% call PopProdCode()%></select></td>
+                    <td> &nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <table class="rmMainTable" cellpadding="6" cellspacing="5" width="95%">
+
+                            <tr>
+                                <td colspan="2" align="center" valign="top">
+                                    <div id="tabDiv" style="border: 1px solid #333333;">
+                                        <table id="tab" style="font-size:9pt; border-collapse:collapse" cellpadding="2" width="100%">
+                                            <thead>
+                                                <tr bgcolor='WhiteSmoke' style="background-color: #CCCCCC;font-size: 8pt;">
+                                                    <th class='locked' width="70px">Picture</th>
+                                                    <th class='locked' width="70px">Set-up</th>
+                                                    <th class='locked' width="120px">Expander</th>
+                                                    <th class='locked' width="90px">Mode</th>
+                                                    <th class='locked' width="120px">Thread Description</th>
+                                                    <th class='locked' width="100px">Machine</th>
+                                                    <th class='locked'>File Description</th>
+                                                    <th class='locked' width="140px">Date Created</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr style="background-color: White; color:black;">
+                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\_images\Drawings\WhiteWumag_Mode2Swrap.png" class="editLink">Review</a></td></tr></table></td>
+                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\BLUE MAG\AB-0HUS.pdf" class="editLink"><b>AB-0HUS</b></a></td></tr></table></td>
+                                                    <td align="center"><b> &nbsp;&nbsp; N</b> <br /><br /> @row.EXPANDER &nbsp; </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 2</b> <br /><br /> @row.THREAD </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; S-wrap</b> <br /><br /> @row.THREADDESC </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; WUMAG</b> <br /><br /> @row.MACHINE </td>
+                                                    <td align="left"><b> &nbsp;&nbsp; White Wumag Mode2 S-wrap</b> <br /><br />  &nbsp;&nbsp; @row.FILENAME </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 6/27/2024  10:44:21 AM</b> <br /><br /> @row.FILETIMESTAMP </td>
+                                                </tr>
+                                                <tr style="background-color: WhiteSmoke; color:teal;">
+                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\_images\Drawings\BlueWumagBase1_Mode2Swrap.png" class="editLink">Review</a></td></tr></table></td>
+                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\WUMAG\AS-PK-0NUS+TF2.pdf" class="editLink">AS-PK-0NUS+TF2</a></td></tr></table></td>
+                                                    <td align="center"><b> N</b> </td>
+                                                    <td align="center"><b> 2</b> </td>
+                                                    <td align="center"><b> S-wrap</b> </td>
+                                                    <td align="center"><b> BLUE MAG</b> </td>
+                                                    <td align="left"><b> Blue Wumag Base1 Mode2 S-wrap</b> </td>
+                                                    <td align="center"><b> 6/27/2024  10:44:21 AM</b> </td>
+                                                </tr>
+                                                <tr style="background-color: White;">
+                                                    <td style="border-style: solid none none none; border-width: thin; border-color: #E6E6E6;" width="120px" colspan="10">&nbsp;</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top" align="center" colspan="2">
+                        <table width="100%">
+                            <tr>
+                                <td align="center"> btnMain<input class="btn" type="button" value="Call ASP?" onclick="" name="btnMain" /></td>
+                                <td align="center"> </td>
+                                <td align="center"> btnSubmit<input type="button" value="Print?" name="btnSubmit" onclick="self.location = 'SalesMain.asp'" class="btn" /> was "ValidEntry()"</td>
+                            </tr>
+                            <tr><td> &nbsp;&nbsp;</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        <script src="app.js"></script>
+        <noscript>You need to enable JavaScript to view the full site.</noscript>
+    </body>
+    </html>
