@@ -51,7 +51,6 @@ label {
     font-weight: 700;
 }
 
-/* Begins copy from OpenOrdersGrid.asp */
 .formTitle {
     font-size: 25pt;
     font-family: Arial;
@@ -65,9 +64,6 @@ label {
 
 .headerTr1 {
     white-space: nowrap;
-    background-image: url('Img/gryFade.bmp'); /* 7/16/24 Chgd from "\\bdx-app01\BDXMobile\Media\gryFade.bmp");*/
-    background-position: top;
-    background-repeat: repeat-x;
     height: 30px;
 }
 
@@ -98,8 +94,6 @@ label {
     width: 990px;
     border: thin outset #C0C0C0;
     border-collapse: collapse;
-    background-image: url('Img/gryFade.bmp'); /* 7/16/24 Chgd from "\\bdx-app01\BDXMobile\Media\gryFade.bmp");*/
-    background-repeat: repeat-x;
 }
 
 .editLink {
