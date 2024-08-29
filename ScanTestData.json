@@ -1,6 +1,4 @@
-{
-  "$schema": "https://json-schema.org/draft-07/schema",
-  "scans": [
+[
     {
       "scanid": "1",
       "current_loc": "4001",
@@ -41,5 +39,4 @@
       "invtype": "3",
       "machname": null
     }
-  ]
-}
+]
