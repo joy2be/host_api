@@ -23,12 +23,12 @@
             var table = document.getElementById("myTable");
             for (var i = 0; i < jsonData.length; i++) {
                 var row = <tr>
-                            <td>$jsonData[i].scanid</td>
-                            <td>$jsonData[i].current_loc</td>
-                            <td>$jsonData[i].scanned_itemid</td>
-                            <td>$jsonData[i].scantimestamp</td>
-                            <td>$jsonData[i].invtype</td>
-                            <td>$jsonData[i].machname</td>
+                            <td>${jsonData[i].scanid}</td>
+                            <td>${jsonData[i].current_loc}</td>
+                            <td>${jsonData[i].scanned_itemid}</td>
+                            <td>${jsonData[i].scantimestamp}</td>
+                            <td>${jsonData[i].invtype}</td>
+                            <td>${jsonData[i].machname}</td>
                         </tr>
                 table.innerHTML += row;
             }
