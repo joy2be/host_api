@@ -8,8 +8,8 @@
     <title>Machines</title>
     <link rel="stylesheet" href="main.css">
 <script type="text/javascript" language="javascript">
-        const jsonData = [
-            fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));];
+        const jsonData = 
+            fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));
         const table = document.getElementById("myTable");
         for (let i = 0; i < jsonData.length; i++) {
             const row = table.insertRow();
