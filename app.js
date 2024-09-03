@@ -16,9 +16,9 @@ switcher.addEventListener('click', function () {
 
 var myArray = []
 $.ajax({
-    method: 'GET',
-    url: 'https://joy2be.github.io/host_api/ScanTestData.json',
-    success: function(response){
+    method:'GET',
+    url:'https://joy2be.github.io/host_api/ScanTestData',
+    success:function(response){
         myArray = response.items
         buildTable(myArray)
         console.log(MyArray)
@@ -28,7 +28,7 @@ $.ajax({
 function buildTable(jsonData){
     var table = document.getElementById('myTable')
     for (var i = 0; i < jsonData.length; i++) {
-        table.innerHTML = '<tr>
+        var row = '<tr>
                     <td>${jsonData[i].scanid}</td>
                     <td>${jsonData[i].current_loc}</td>
                     <td>${jsonData[i].scanned_itemid}</td>
@@ -36,5 +36,6 @@ function buildTable(jsonData){
                     <td>${jsonData[i].invtype}</td>
                     <td>${jsonData[i].machname}</td>
                 </tr>'
+        table.innerHTML += row
     }
 }
