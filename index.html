@@ -9,7 +9,25 @@
     <link rel="stylesheet" href="main.css">
 <script type="text/javascript" language="javascript">
     function getData() {
-        fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));
+        const jsonData = [
+            fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));];
+        const table = document.getElementById("myTable");
+        for (let i = 0; i < jsonData.length; i++) {
+            const row = table.insertRow();
+            const scanidCell = row.insertCell();
+            const current_locCell = row.insertCell();
+            const scanned_itemidCell = row.insertCell();
+            const scantimestampCell = row.insertCell();
+            const invtypeCell = row.insertCell();
+            const machnameCell = row.insertCell();
+
+            scanidCell = jsonData[i].scanid;
+            current_locCell = jsonData[i].current_loc;
+            scanned_itemidCell = jsonData[i].scanned_itemid;
+            scantimestampCell = jsonData[i].scantimestamp;
+            invtypeCell = jsonData[i].invtype;
+            machnameCell = jsonData[i].machname;
+        }
     }
 </script>
 </head>
@@ -93,7 +111,7 @@
                                                     <td align="center"><b> &nbsp;&nbsp; S-wrap</b> </td>
                                                     <td align="center"><b> &nbsp;&nbsp; LINE 2</b> </td>
                                                 </tr>
-                                                <%call getData() %>
+                                                
                                                 <tr style="background-color: White;">
                                                     <td style="border-style: solid none none none; border-width: thin; border-color: #E6E6E6;" width="120px" colspan="10">&nbsp;</td>
                                                 </tr>
@@ -103,6 +121,7 @@
                                 </td>
                             </tr>
                         </table>
+                        <table id="myTable" align="center"><%call getData() %></table>
                     </td>
                 </tr>
                 <tr>
