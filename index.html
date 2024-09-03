@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machines</title>
     <link rel="stylesheet" href="main.css">
+<script type="text/javascript" language="javascript">
+    function getData() {
+        fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));
+    }
+</script>
 </head>
 <body class="light-theme">
         <br />
@@ -36,7 +41,50 @@
             </tr>
         </table>
         <!-- This is where the .asp stuff should be -->
-        <table id="mainMenuMainTableBody" align="center">
+<form  id="FormName" name="FormName"  method="post" action="" >
+<%
+        Sub getItems()
+        dim RS
+        RS.MoveFirst
+        ct = 0
+        Do While Not RS.EOF
+    if ct > 0 then
+    %><tr style="background-color: WhiteSmoke;"><%
+    ct = 0
+    else
+    %><tr style="background-color: White;"><%
+    ct = ct + 1
+    end if
+      %><td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"> &nbsp;&nbsp; Review </td></tr></table></td>
+        <td align="center"> &nbsp; <%=RS.fields("scanid").value %> &nbsp; </td>
+        <td align="center"><%=RS.fields("current_loc").value %></td>
+        <td align="left"> &nbsp;&nbsp;  <%=RS.fields("scanned_itemid").value %> </td>
+        <td align="center"> <%=RS.fields("scantimestamp").value %> </td>
+        <td align="center"> &nbsp; <%= RS.fields("invtype").value %> </td>
+        <td align="center"> &nbsp; <%= RS.fields("machname").value %> </td>
+        </tr>
+    <%
+'Moves pointer to next record
+RS.MoveNext
+Loop	
+    if ct > 0 then
+    %><tr style="background-color: WhiteSmoke;"><%
+    ct = 0
+    else
+    %><tr style="background-color: White;"><%
+    ct = ct + 1
+    end if
+    %>
+    <td nowrap="nowrap" style="border-style: solid none none none; border-width: thin; border-color: #E6E6E6;" width="120px" colspan="10">&nbsp;</td>
+    </tr>
+    <%
+End If
+
+end if
+End Sub
+
+    %>
+        <table id="mainMenuMainTableBody" align="center" onload="displayDate()">
             <tr class="headerTr">
                 <td class="rigTD" valign="middle"> &nbsp;</td>
                 <td valign="top" rowspan="2" style="text-align: right"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="Img/bdxmSmall.png" /></td> <!-- 7/17/24 Chgd src from "\\bdx-app01\BDXMobile\Media\bdxmSmall.png"); -->
@@ -92,7 +140,7 @@
                                                 <tr style="background-color: White;">
                                                     <td style="border-style: solid none none none; border-width: thin; border-color: #E6E6E6;" width="120px" colspan="10">&nbsp;</td>
                                                 </tr>
-                                            </tbody>
+                                            </tbody><tbody><%call getItems() %></tbody>
                                         </table>
                                     </div>
                                 </td>
@@ -115,5 +163,6 @@
             </table>
         <script src="app.js"></script>
         <noscript>You need to enable JavaScript to view the full site.</noscript>
-    </body>
+</form>
+</body>
     </html>
