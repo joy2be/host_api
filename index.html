@@ -29,8 +29,8 @@
                         <li class="list">Add visual styles</li>
                         <li class="list">Add light and dark themes</li>
                         <li class="list">Enable switching the theme</li>
-                        <li>Add database connection</li>
-                        <li>Add SQL statement to populate table below</li>
+                        <li class="list">Add API host that uses JSON file</li>
+                        <li>Add statement to populate table below</li>
                         <li>Add variable to build folder structure for forms</li>
                         <li>Use the var on "Review" to open the set-up form for each row</li>
                     </ul>
@@ -55,13 +55,13 @@
     %><tr style="background-color: White;"><%
     ct = ct + 1
     end if
-      %><td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"> &nbsp;&nbsp; Review </td></tr></table></td>
-        <td align="center"> &nbsp; <%=RS.fields("scanid").value %> &nbsp; </td>
-        <td align="center"><%=RS.fields("current_loc").value %></td>
-        <td align="left"> &nbsp;&nbsp;  <%=RS.fields("scanned_itemid").value %> </td>
-        <td align="center"> <%=RS.fields("scantimestamp").value %> </td>
-        <td align="center"> &nbsp; <%= RS.fields("invtype").value %> </td>
-        <td align="center"> &nbsp; <%= RS.fields("machname").value %> </td>
+      %>
+        <td align="center"><b> &nbsp;&nbsp; <%=RS.fields("scanid").value %> &nbsp; </td>
+        <td align="center"><b> &nbsp;&nbsp; <%=RS.fields("current_loc").value %> &nbsp; </td>
+        <td align="center"><b> &nbsp;&nbsp; <%=RS.fields("scanned_itemid").value %> &nbsp; </td>
+        <td align="center"><b> &nbsp;&nbsp; <%=RS.fields("scantimestamp").value %> &nbsp; </td>
+        <td align="center"><b> &nbsp;&nbsp; <%= RS.fields("invtype").value %> &nbsp; </td>
+        <td align="center"><b> &nbsp;&nbsp; <%= RS.fields("machname").value %> &nbsp; </td>
         </tr>
     <%
 'Moves pointer to next record
@@ -87,13 +87,18 @@ End Sub
         <table id="mainMenuMainTableBody" align="center" onload="displayDate()">
             <tr class="headerTr">
                 <td class="rigTD" valign="middle"> &nbsp;</td>
-                <td valign="top" rowspan="2" style="text-align: right"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="Img/bdxmSmall.png" /></td> <!-- 7/17/24 Chgd src from "\\bdx-app01\BDXMobile\Media\bdxmSmall.png"); -->
+                <td valign="top" rowspan="2" style="text-align: right"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="Img/bdxmSmall.png" /></td>
                 </tr>
-                <tr><td class="formTitle" valign="bottom" align="right">&nbsp;&nbsp;<label>BDX Machine Set-ups<br /></label>&nbsp;&nbsp;Based on Products&nbsp;&nbsp;</td></tr>
+                <tr><td class="formTitle" valign="bottom" align="right">&nbsp;&nbsp;<label>Based on Mobile App<br /></label>&nbsp;&nbsp;BDX Inventory Scans&nbsp;&nbsp;</td></tr>
                 <tr class="redStripe"><td colspan="2"> </td></tr>
                 <tr>
-                    <td style="font-size: medium;" class="style4" nowrap="nowrap">Product Code:</td>
-                    <td colspan="1"><select name="prodCode" id="prodCode"> <% call PopProdCode()%></select></td>
+                    <td style="font-size: medium;" class="style4" nowrap="nowrap">Inventory Type:</td>
+                    <td colspan="1"><select name="prodCode" id="prodCode">
+                        <option value="">&nbsp;</option>
+                        <option value="1">"1 Raw Materials"</option>
+                        <option value="2">"2 WIP"</option>
+                        <option value="3">"3 Finished Goods"</option>
+                    </select></td>
                     <td> &nbsp;&nbsp;</td>
                 </tr>
                 <tr>
@@ -106,41 +111,36 @@ End Sub
                                         <table id="tab" style="font-size:9pt; border-collapse:collapse" cellpadding="2" width="100%">
                                             <thead>
                                                 <tr bgcolor='WhiteSmoke' style="background-color: #CCCCCC;font-size: 8pt;">
-                                                    <th class='locked' width="70px">Picture</th>
-                                                    <th class='locked' width="70px">Set-up</th>
-                                                    <th class='locked' width="120px">Expander</th>
-                                                    <th class='locked' width="90px">Mode</th>
-                                                    <th class='locked' width="120px">Thread Description</th>
+                                                    <th class='locked' width="70px">Scan ID</th>
+                                                    <th class='locked' width="70px">Location</th>
+                                                    <th class='locked' width="120px">Scanned Item ID</th>
+                                                    <th class='locked' width="140px">Date/Time Scanned</th>
+                                                    <th class='locked' width="70px">Inv Type</th>
                                                     <th class='locked' width="100px">Machine</th>
-                                                    <th class='locked'>File Description</th>
-                                                    <th class='locked' width="140px">Date Created</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr style="background-color: White; color:black;">
-                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\_images\Drawings\WhiteWumag_Mode2Swrap.png" class="editLink">Review</a></td></tr></table></td>
-                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\BLUE MAG\AB-0HUS.pdf" class="editLink"><b>AB-0HUS</b></a></td></tr></table></td>
-                                                    <td align="center"><b> &nbsp;&nbsp; N</b> <br /><br /> @row.EXPANDER &nbsp; </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; 2</b> <br /><br /> @row.THREAD </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; S-wrap</b> <br /><br /> @row.THREADDESC </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; WUMAG</b> <br /><br /> @row.MACHINE </td>
-                                                    <td align="left"><b> &nbsp;&nbsp; White Wumag Mode2 S-wrap</b> <br /><br />  &nbsp;&nbsp; @row.FILENAME </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; 6/27/2024  10:44:21 AM</b> <br /><br /> @row.FILETIMESTAMP </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 11</b> <br /><br /> @row.scanid &nbsp; </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 1001</b> <br /><br /> @row.current_loc &nbsp; </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; ST12345-1</b> <br /><br /> @row.scanned_itemid &nbsp; </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 3/26/2024  11:11:00 AM</b> <br /><br /> @row.scantimestamp </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 2</b> <br /><br /> @row.invtype </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; LINE 1</b> <br /><br /> @row.machname </td>
                                                 </tr>
                                                 <tr style="background-color: WhiteSmoke; color:teal;">
-                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\_images\Drawings\BlueWumagBase1_Mode2Swrap.png" class="editLink">Review</a></td></tr></table></td>
-                                                    <td align="center"><table><tr><td align="center" width="50px" style="border: 1px  solid #E6E6E6;"><a href="\\bdx-app01\Bondex_Data\Felt Production Data\Machine Set-Ups\WUMAG\AS-PK-0NUS+TF2.pdf" class="editLink">AS-PK-0NUS+TF2</a></td></tr></table></td>
-                                                    <td align="center"><b> N</b> </td>
-                                                    <td align="center"><b> 2</b> </td>
-                                                    <td align="center"><b> S-wrap</b> </td>
-                                                    <td align="center"><b> BLUE MAG</b> </td>
-                                                    <td align="left"><b> Blue Wumag Base1 Mode2 S-wrap</b> </td>
-                                                    <td align="center"><b> 6/27/2024  10:44:21 AM</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 22</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 2002</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; ST12345-2</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 3/26/2024  11:22:00 AM</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; S-wrap</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; LINE 2</b> </td>
                                                 </tr>
+                                                <%call getItems() %>
                                                 <tr style="background-color: White;">
                                                     <td style="border-style: solid none none none; border-width: thin; border-color: #E6E6E6;" width="120px" colspan="10">&nbsp;</td>
                                                 </tr>
-                                            </tbody><tbody><%call getItems() %></tbody>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </td>
