@@ -26,9 +26,9 @@ $.ajax({
 })
       
 function buildTable(jsonData){
-    const table = document.getElementById('myTable')
+    let table = document.getElementById('myTable')
     for (let i = 0; i < jsonData.length; i++) {
-        const row = '<tr>
+        let row = '<tr>
                     <td>${jsonData[i].scanid}</td>
                     <td>${jsonData[i].current_loc}</td>
                     <td>${jsonData[i].scanned_itemid}</td>
