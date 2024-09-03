@@ -6,30 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machines</title>
-    <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
     <script>
         var myArray = []
+        
         $.ajax({
             method: 'GET',
             url: 'https://joy2be.github.io/host_api/ScanTestData.json',
             success: function(response){
                 myArray = response.items
-                buildTabe(myArray)
+                buildTable(myArray)
                 console.log(MyArray)
             }
         })
+        
         function buildTable(jsonData){
-            var table = document.getElementById("myTable");
+            var table = document.getElementById('myTable');
             for (var i = 0; i < jsonData.length; i++) {
-                var row = <tr>
+                var row = '<tr>
                             <td>${jsonData[i].scanid}</td>
                             <td>${jsonData[i].current_loc}</td>
                             <td>${jsonData[i].scanned_itemid}</td>
                             <td>${jsonData[i].scantimestamp}</td>
                             <td>${jsonData[i].invtype}</td>
                             <td>${jsonData[i].machname}</td>
-                        </tr>
+                        </tr>'
                 table.innerHTML += row;
             }
         }
