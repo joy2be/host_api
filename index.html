@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machines</title>
     <link rel="stylesheet" href="main.css">
-<script type="text/javascript" language="javascript">
+    <script type="text/javascript" language="javascript">
         const jsonData = 
             fetch('https://joy2be.github.io/host_api/ScanTestData.json').then(res=> res.json()).then(data=> console.log(data));
         const table = document.getElementById("myTable");
@@ -27,36 +27,49 @@
             invtypeCell = jsonData[i].invtype;
             machnameCell = jsonData[i].machname;
         }
-</script>
+    </script>
 </head>
 <body class="light-theme">
-        <br />
-        <br />
-        <table align="left" width="100%">
-            <tr>
-                <td align="right">
-                    <h1>Task List</h1>
-                    <p id="msg">Theme switch works!!!</p>
-                </td>
-                <td>
-                </td>
-                <td align="left">
-                    <ul>
-                        <li class="list">Add visual styles</li>
-                        <li class="list">Add light and dark themes</li>
-                        <li class="list">Enable switching the theme</li>
-                        <li class="list">Add API host that uses JSON file</li>
-                        <li>Add statement to populate table below</li>
-                        <li>Add variable to build folder structure for forms</li>
-                        <li>Use the var on "Review" to open the set-up form for each row</li>
-                    </ul>
-                    <div>
-                        <button class="btnTheme">Dark</button>
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <!-- This is where the .asp stuff should be -->
+    <br />
+    <br />
+    <table align="left" width="100%">
+        <tr>
+            <td align="right">
+                <h1>Task List</h1>
+                <p id="msg">Theme switch works!!!</p>
+            </td>
+            <td>
+            </td>
+            <td align="left">
+                <ul>
+                    <li class="list">Add visual styles</li>
+                    <li class="list">Add light and dark themes</li>
+                    <li class="list">Enable switching the theme</li>
+                    <li class="list">Add API host that uses JSON file</li>
+                    <li>Add statement to populate table below</li>
+                    <li>Add variable to build folder structure for forms</li>
+                    <li>Use the var on "Review" to open the set-up form for each row</li>
+                </ul>
+                <div>
+                    <button class="btnTheme">Dark</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- DOES THE SCRIPT BELONG AT THE BOTTOM OF HTML? -->
+    <table class="table table-striped">
+        <tr class="bg-info">
+            <th class='locked' width="70px">Scan ID</th>
+            <th class='locked' width="70px">Location</th>
+            <th class='locked' width="120px">Scanned Item ID</th>
+            <th class='locked' width="140px">Date/Time Scanned</th>
+            <th class='locked' width="70px">Inv Type</th>
+            <th class='locked' width="100px">Machine</th>
+        </tr>
+        <tbody id="myTable">
+        </tbody>
+    </table>
+
         <table id="mainMenuMainTableBody" align="center">
             <tr class="headerTr">
                 <td class="rigTD" valign="middle"> &nbsp;</td>
@@ -94,12 +107,12 @@
                                             </thead>
                                             <tbody>
                                                 <tr style="background-color: White; color:black;">
-                                                    <td align="center"><b> &nbsp;&nbsp; 11</b> <br /><br /> @row.scanid &nbsp; </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; 1001</b> <br /><br /> @row.current_loc &nbsp; </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; ST12345-1</b> <br /><br /> @row.scanned_itemid &nbsp; </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; 3/26/2024  11:11:00 AM</b> <br /><br /> @row.scantimestamp </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; 2</b> <br /><br /> @row.invtype </td>
-                                                    <td align="center"><b> &nbsp;&nbsp; LINE 1</b> <br /><br /> @row.machname </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 11</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 1001</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; ST12345-1</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 3/26/2024  11:11:00 AM</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; 2</b> </td>
+                                                    <td align="center"><b> &nbsp;&nbsp; LINE 1</b> </td>
                                                 </tr>
                                                 <tr style="background-color: WhiteSmoke; color:teal;">
                                                     <td align="center"><b> &nbsp;&nbsp; 22</b> </td>
@@ -119,7 +132,6 @@
                                 </td>
                             </tr>
                         </table>
-                        <table id="myTable" align="center"></table>
                     </td>
                 </tr>
                 <tr>
