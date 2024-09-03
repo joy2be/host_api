@@ -14,7 +14,7 @@ switcher.addEventListener('click', function () {
     console.log('current class name: ' + className);
 });
 
-const myArray = []
+let myArray = []
 $.ajax({
     method:'GET',
     url:'https://joy2be.github.io/host_api/ScanTestData',
