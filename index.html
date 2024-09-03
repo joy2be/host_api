@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body class="light-theme">
@@ -35,19 +36,20 @@
             </td>
         </tr>
     </table>
-    <table class="table table-striped">
-        <tr class="bg-info">
-            <th class='locked' width="90px">Scan ID</th>
-            <th class='locked' width="90px">Location</th>
-            <th class='locked' width="180px">Scanned Item ID</th>
-            <th class='locked' width="200px">Date/Time Scanned</th>
-            <th class='locked' width="100px">Inv Type</th>
-            <th class='locked' width="100px">Machine</th>
-        </tr>
-        <tbody id="myTable">
-        </tbody>
+    <table class="table table-striped" id="myTable">
+        <thead>
+            <tr>
+                <th class='locked' width="90px">Scan ID</th>
+                <th class='locked' width="90px">Location</th>
+                <th class='locked' width="180px">Scanned Item ID</th>
+                <th class='locked' width="200px">Date/Time Scanned</th>
+                <th class='locked' width="100px">Inv Type</th>
+                <th class='locked' width="100px">Machine</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
     </table>
-
+<script src="app.js"></script>
         <table id="mainMenuMainTableBody" align="center">
             <tr class="headerTr">
                 <td class="rigTD" valign="middle"> &nbsp;</td>
@@ -125,7 +127,7 @@
                     </td>
                 </tr>
             </table>
-        <script src="app.js"></script>
+        
         <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
     </html>
