@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
     <link rel="stylesheet" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
         var myArray = []
         
         $.ajax({
@@ -22,10 +22,9 @@
         })
         
         function buildTable(jsonData){
-            var table = document.getElementById('myTable');
+            var table = document.getElementById('myTable')
             for (var i = 0; i < jsonData.length; i++) {
-                var row = 
-                    '<tr>
+                var row = '<tr>
                         <td>${jsonData[i].scanid}</td>
                         <td>${jsonData[i].current_loc}</td>
                         <td>${jsonData[i].scanned_itemid}</td>
