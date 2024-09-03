@@ -28,7 +28,7 @@ $.ajax({
 function buildTable(jsonData){
     var table = document.getElementById('myTable')
     for (var i = 0; i < jsonData.length; i++) {
-        var row = '<tr>
+        table.innerHTML = '<tr>
                     <td>${jsonData[i].scanid}</td>
                     <td>${jsonData[i].current_loc}</td>
                     <td>${jsonData[i].scanned_itemid}</td>
@@ -36,6 +36,5 @@ function buildTable(jsonData){
                     <td>${jsonData[i].invtype}</td>
                     <td>${jsonData[i].machname}</td>
                 </tr>'
-        table.innerHTML += row;
     }
 }
