@@ -14,28 +14,24 @@ switcher.addEventListener('click', function () {
     console.log('current class name: ' + className);
 });
 
-let myArray = []
-$.ajax({
-    method:'GET',
-    url:'https://joy2be.github.io/host_api/ScanTestData',
-    success:function(response){
-        myArray = response.items
-        buildTable(myArray)
-        console.log(MyArray)
-    }
-})
-      
-function buildTable(jsonData){
-    let table = document.getElementById('myTable')
-    for (let i = 0; i < jsonData.length; i++) {
-        let row = '<tr>
-                    <td>${jsonData[i].scanid}</td>
-                    <td>${jsonData[i].current_loc}</td>
-                    <td>${jsonData[i].scanned_itemid}</td>
-                    <td>${jsonData[i].scantimestamp}</td>
-                    <td>${jsonData[i].invtype}</td>
-                    <td>${jsonData[i].machname}</td>
-                </tr>'
-        table.innerHTML += row
-    }
-}
+    $(document).ready(function() {
+      // Retrieve JSON data from "ScanTestData.json" file
+      $.getJSON("ScanTestData.json", function(data) {
+        var tableBody = $("#myTable tbody");
+
+        // Iterate over each person object in the JSON data
+        $.each(data, function(index, person) {
+          var row = $("<tr></tr>"); // Create a new table row
+
+          // Create table cells and fill them with the person's data
+          row.append($("<td></td>").text(items.scanid));
+          row.append($("<td></td>").text(items.current_loc));
+          row.append($("<td></td>").text(items.scanned_itemid));
+          row.append($("<td></td>").text(items.scantimestamp));
+          row.append($("<td></td>").text(items.invtype));
+          row.append($("<td></td>").text(items.machname));
+
+          tableBody.append(row); // Add the row to the table body
+        });
+      });
+    });
