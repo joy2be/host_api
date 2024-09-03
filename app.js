@@ -14,7 +14,7 @@ switcher.addEventListener('click', function () {
     console.log('current class name: ' + className);
 });
 
-var myArray = []
+const myArray = []
 $.ajax({
     method:'GET',
     url:'https://joy2be.github.io/host_api/ScanTestData',
@@ -26,9 +26,9 @@ $.ajax({
 })
       
 function buildTable(jsonData){
-    var table = document.getElementById('myTable')
-    for (var i = 0; i < jsonData.length; i++) {
-        var row = '<tr>
+    const table = document.getElementById('myTable')
+    for (let i = 0; i < jsonData.length; i++) {
+        const row = '<tr>
                     <td>${jsonData[i].scanid}</td>
                     <td>${jsonData[i].current_loc}</td>
                     <td>${jsonData[i].scanned_itemid}</td>
