@@ -20,7 +20,7 @@ switcher.addEventListener('click', function () {
         var tableBody = $("#myTable tbody");
 
         // Iterate over each person object in the JSON data
-        $.each(data, function(index, person) {
+        $.each(data, function(index, items) {
           var row = $("<tr></tr>"); // Create a new table row
 
           // Create table cells and fill them with the person's data
