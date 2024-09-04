@@ -13,24 +13,40 @@ switcher.addEventListener('click', function () {
     console.log('current class name: ' + className);
 });
 
-$(document).ready(function() {
-	// Retrieve JSON data from "ScanTestData.json" file
-	$.getJSON("https://joy2be.github.io/host_api/ScanTestData.json", function(data) {
-	var tableBody = $("#table-body tbody");
+// Fetch the JSON data from the file
+fetch('https://joy2be.github.io/host_api/ScanTestData.json')
+  .then(response => response.json())
+  .then(data => {
+    // Get the table body element
+    const tableBody = document.getElementById('table-body');
 
-		// Iterate over each person object in the JSON data
-		$.each(data, function(index, scandata) {
-		var row = $("<tr></tr>"); // Create a new table row
+    // Loop through the JSON array
+    data.forEach(item => {
+      // Create a new row
+      const row = document.createElement('tr');
 
-		// Create table cells and fill them with the person's data
-		row.append($("<td></td>").text(scandata.scanid));
-		row.append($("<td></td>").text(scandata.current_loc));
-		row.append($("<td></td>").text(scandata.scanned_itemid));
-		row.append($("<td></td>").text(scandata.scantimestamp));
-		row.append($("<td></td>").text(scandata.invtype));
-		row.append($("<td></td>").text(scandata.machname));
+      // Add cells to the row
+      const idCell = document.createElement('td');
+      idCell.textContent = scandata.scanid;
+      row.appendChild(idCell);
+      const locCell = document.createElement('td');
+      locCell.textContent = scandata.current_loc;
+      row.appendChild(locCell);
+      const itemidCell = document.createElement('td');
+      itemidCell.textContent = scandata.scanned_itemid;
+      row.appendChild(itemidCell);
+      const scantimeCell = document.createElement('td');
+      scantimeCell.textContent = scandata.scantimestamp;
+      row.appendChild(scantimeCell);
+      const invtypeCell = document.createElement('td');
+      invtypeCell.textContent = scandata.invtype;
+      row.appendChild(invtypeCell);
+      const machineCell = document.createElement('td');
+      machineCell.textContent = scandata.machname;
+      row.appendChild(machineCell);
 
-		tableBody.append(row); // Add the row to the table body
-        	});
-	});
-});
+      // Append the row to the table body
+      tableBody.appendChild(row);
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
