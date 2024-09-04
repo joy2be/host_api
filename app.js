@@ -17,7 +17,7 @@ switcher.addEventListener('click', function () {
 
 		$(document).ready(function() {
 		// Retrieve JSON data from "ScanTestData.json" file
-		$.getJSON("ScanTestData.json", function(data) {
+		$.getJSON("https://joy2be.github.io/host_api/ScanTestData.json", function(data) {
 			var tableBody = $("#myTable tbody");
 
         // Iterate over each person object in the JSON data
