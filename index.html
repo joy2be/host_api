@@ -39,17 +39,18 @@
     <table class="table table-striped" id="myTable">
         <thead>
             <tr>
-                <th class='locked' width="90px">Scan ID</th>
-                <th class='locked' width="90px">Location</th>
-                <th class='locked' width="180px">Scanned Item ID</th>
-                <th class='locked' width="200px">Date/Time Scanned</th>
-                <th class='locked' width="100px">Inv Type</th>
-                <th class='locked' width="100px">Machine</th>
+                <th width="90px">Scan ID</th>
+                <th width="90px">Location</th>
+                <th width="180px">Scanned Item ID</th>
+                <th width="200px">Date/Time Scanned</th>
+                <th width="100px">Inv Type</th>
+                <th width="100px">Machine</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="table-body">
+			<!-- Table rows will be added here when .json file is processed -->
+		</tbody>
     </table>
-	<!-- JavaScript code using jQuery -->
     <script src="app.js"></script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
 </body>
