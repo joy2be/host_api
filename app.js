@@ -21,7 +21,7 @@ fetch('https://joy2be.github.io/host_api/ScanTestData.json')
     const tableBody = document.getElementById('table-body');
 
     // Loop through the JSON array
-    data.forEach(item => {
+    scandata.forEach(item => {
       // Create a new row
       const row = document.createElement('tr');
 
