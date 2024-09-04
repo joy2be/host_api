@@ -1,6 +1,4 @@
 ﻿//'use strict';
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 const switcher = document.querySelector('.btnTheme');
 
 switcher.addEventListener('click', function () {
@@ -17,7 +15,7 @@ switcher.addEventListener('click', function () {
 
 		$(document).ready(function() {
 		// Retrieve JSON data from "ScanTestData.json" file
-		$.getJSON("ScanTestData.json", function(data) {
+		$.getJSON("https://joy2be.github.io/host_api/ScanTestData.json", function(data) {
 			var tableBody = $("#myTable tbody");
 
         // Iterate over each person object in the JSON data
