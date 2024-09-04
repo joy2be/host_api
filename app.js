@@ -13,24 +13,24 @@ switcher.addEventListener('click', function () {
     console.log('current class name: ' + className);
 });
 
-		$(document).ready(function() {
-		// Retrieve JSON data from "ScanTestData.json" file
-		$.getJSON("https://joy2be.github.io/host_api/ScanTestData.json", function(data) {
-			var tableBody = $("#myTable tbody");
+$(document).ready(function() {
+	// Retrieve JSON data from "ScanTestData.json" file
+	$.getJSON("https://joy2be.github.io/host_api/ScanTestData.json", function(data) {
+	var tableBody = $("#table-body tbody");
 
-        // Iterate over each person object in the JSON data
-        $.each(data, function(index, scandata) {
-			var row = $("<tr></tr>"); // Create a new table row
+		// Iterate over each person object in the JSON data
+		$.each(data, function(index, scandata) {
+		var row = $("<tr></tr>"); // Create a new table row
 
-			// Create table cells and fill them with the person's data
-			row.append($("<td></td>").text(scandata.scanid));
-			row.append($("<td></td>").text(scandata.current_loc));
-			row.append($("<td></td>").text(scandata.scanned_itemid));
-			row.append($("<td></td>").text(scandata.scantimestamp));
-			row.append($("<td></td>").text(scandata.invtype));
-			row.append($("<td></td>").text(scandata.machname));
+		// Create table cells and fill them with the person's data
+		row.append($("<td></td>").text(scandata.scanid));
+		row.append($("<td></td>").text(scandata.current_loc));
+		row.append($("<td></td>").text(scandata.scanned_itemid));
+		row.append($("<td></td>").text(scandata.scantimestamp));
+		row.append($("<td></td>").text(scandata.invtype));
+		row.append($("<td></td>").text(scandata.machname));
 
-			tableBody.append(row); // Add the row to the table body
-        });
-      });
-    });
+		tableBody.append(row); // Add the row to the table body
+        	});
+	});
+});
