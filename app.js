@@ -26,24 +26,24 @@ fetch('https://joy2be.github.io/host_api/ScanTestData.json')
       const row = document.createElement('tr');
 
       // Add cells to the row
-      const idCell = document.createElement('td');
-      idCell.textContent = scandata.scanid;
-      row.appendChild(idCell);
-      const locCell = document.createElement('td');
-      locCell.textContent = scandata.current_loc;
-      row.appendChild(locCell);
-      const itemidCell = document.createElement('td');
-      itemidCell.textContent = scandata.scanned_itemid;
-      row.appendChild(itemidCell);
-      const scantimeCell = document.createElement('td');
-      scantimeCell.textContent = scandata.scantimestamp;
-      row.appendChild(scantimeCell);
+      const scanidCell = document.createElement('td');
+      scanidCell.textContent = scandata.scanid;
+      row.appendChild(scanidCell);
+      const current_locCell = document.createElement('td');
+      current_locCell.textContent = scandata.current_loc;
+      row.appendChild(current_locCell);
+      const scanned_itemidCell = document.createElement('td');
+      scanned_itemidCell.textContent = scandata.scanned_itemid;
+      row.appendChild(scanned_itemidCell);
+      const scantimestampCell = document.createElement('td');
+      scantimestampCell.textContent = scandata.scantimestamp;
+      row.appendChild(scantimestampCell);
       const invtypeCell = document.createElement('td');
       invtypeCell.textContent = scandata.invtype;
       row.appendChild(invtypeCell);
-      const machineCell = document.createElement('td');
-      machineCell.textContent = scandata.machname;
-      row.appendChild(machineCell);
+      const machnameCell = document.createElement('td');
+      machnameCell.textContent = scandata.machname;
+      row.appendChild(machnameCell);
 
       // Append the row to the table body
       tableBody.appendChild(row);
