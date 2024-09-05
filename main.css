@@ -43,13 +43,18 @@ table.center {
   margin-right: auto;
 }
 
-table.table-striped, th, td {
+table.table-striped {
   border: 1px solid var(--fontColor);
   border-collapse: collapse;
 }
 
 th.task-row, td.task-data {
   border: none;
+  padding: 10px;
+}
+
+tr.row-striped: nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 li {
