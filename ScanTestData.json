@@ -1,6 +1,5 @@
-{
-  "scandata": [
-    {
+[
+	{
       "scanid": 1,
       "current_loc": "4001",
       "scanned_itemid": "OR1234-1001",
@@ -40,5 +39,4 @@
       "invtype": 3,
       "machname": null
     }
-  ]
-}
+ ]
