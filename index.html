@@ -21,7 +21,7 @@
                 <h1>Task List</h1>
                 <p id="msg">Tap the circle to switch themes!</p>
             </td>
-            <td>
+            <td class="task-data">
             </td>
             <td align="left" class="task-data">
                 <ul>
@@ -76,7 +76,7 @@
             // Loop through the JSON array
             data.forEach(item => {
                 // Create a new row
-                const row = document.createElement('tr class="row-striped"');
+                const row = document.createElement('tr');
 				
                 // Add cells to the row
                 const scanidCell = document.createElement('td');
