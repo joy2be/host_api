@@ -50,13 +50,13 @@ table.table-striped {
 
 tr.task-row, td.task-data {
   border: none;
-  padding: 8px;
+  padding: 4px;
 }
 
 tr, td {
   border: 1px solid var(--fontColor);
   border-collapse: collapse;
-  padding: 8px;
+  padding: 4px;
 }
 
 tr: nth-child(odd) {
