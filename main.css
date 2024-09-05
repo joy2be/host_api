@@ -98,89 +98,9 @@ label {
     font-weight: 700;
 }
 
-.btnM {
-    width: 94px;
-    height: 22px;
-    font-weight: 700;
-}
-
-.logoutLink {
-    color: #FF0000;
-    font-size: medium;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif
-}
-
-.redStripe {
-    background-color: #FF0000;
-}
-
-#mainMenuMainTableBody {
-    width: 990px;
-    border: thin outset #C0C0C0;
-    border-collapse: collapse;
-}
-
-.editLink {
-    color: #000000;
-    font-size: 8pt;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif
-}
-
-table#tab td {
-    border: 1px solid #E6E6E6;
-}
-
-.auto-style2 {
-    width: 130px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.auto-style4 {
-    width: 116px;
-}
-
-#FormName {
-    font-weight: 700;
-}
-
-div#tabDiv {
-    width: 975px;
-    height: 600px;
-    overflow: auto;
-    scrollbar-base-color: #D8D8D8;
-}
-
 thead th, thead th.locked {
-    background-color: var(--bg);  //was #D8D8D8 then #B0E0E6
+    background-color: #B0E0E6;
     border: 1px solid var(--fontColor);  //was border-right
     position: relative;
-    padding: 8px;
-}
-
-thead th {
-    top: expression(document.getElementById("tabDiv").scrollTop-2);
-    z-index: 20;
-}
-
-th.locked {
-    border-right: 1px solid #E6E6E6;
-    border-bottom: 1px solid #E6E6E6;
-    text-align: center;
-    left: expression(parentNode.parentNode.scrollLeft);
-    position: relative;
-    z-index: 10;
-}
-
-th.locked {
-    text-align: center;
-    left: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft);
-    position: relative;
-    z-index: 10;
-}
-
-thead th.locked {
-    z-index: 30;
+    padding: 4px;
 }
