@@ -48,7 +48,7 @@ table.table-striped {
     border-collapse: collapse;
 }
 
-th {
+thead th {
     background-color: #B0E0E6;
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
