@@ -12,23 +12,6 @@ body {
     vertical-align: middle
 }
 
-table.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table, th, td {
-  border: 1px solid var(--black);
-}
-
-li {
-    list-style: circle;
-}
-
-.list {
-    list-style: square;
-}
-
 .light-theme {
     --bg: var(--green);
     --fontColor: var(--black);
@@ -53,6 +36,24 @@ li {
     border: none;
     color: var(--btnFontColor);
     background-color: var(--btnBg);
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.table-striped, th, td {
+  border: 1px solid var(--fontColor);
+  border-collapse: collapse;
+}
+
+li {
+    list-style: circle;
+}
+
+.list {
+    list-style: square;
 }
 
 label {
@@ -138,8 +139,8 @@ div#tabDiv {
 }
 
 thead th, thead th.locked {
-    background-color: #D8D8D8;
-    border-right: 1px solid silver;
+    background-color: #008B8B;  //was #D8D8D8 now DarkCyan
+    border-right: 1px solid var(--fontColor);
     position: relative;
 }
 
