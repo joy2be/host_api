@@ -53,10 +53,6 @@ th.task-row, td.task-data {
   padding: 10px;
 }
 
-tr: nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 li {
     list-style: circle;
 }
@@ -148,8 +144,8 @@ div#tabDiv {
 }
 
 thead th, thead th.locked {
-    background-color: #B0E0E6;  //was #D8D8D8
-    border-right: 1px solid var(--fontColor);
+    background-color: var(--fontColor);  //was #D8D8D8 then #B0E0E6
+    border-right: 1px solid var(--bg);
     position: relative;
 }
 
