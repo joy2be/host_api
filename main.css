@@ -53,6 +53,12 @@ tr.task-row, td.task-data {
   padding: 8px;
 }
 
+tr, td {
+  border: 1px solid var(--fontColor);
+  border-collapse: collapse;
+  padding: 8px;
+}
+
 tr: nth-child(odd) {
   background-color: #f2f2f2;
 }
@@ -149,7 +155,7 @@ div#tabDiv {
 
 thead th, thead th.locked {
     background-color: var(--bg);  //was #D8D8D8 then #B0E0E6
-    border-right: 1px solid var(--fontColor);
+    border: 1px solid var(--fontColor);  //was border-right
     position: relative;
     padding: 8px;
 }
