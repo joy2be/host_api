@@ -48,6 +48,10 @@ table.table-striped, th, td {
   border-collapse: collapse;
 }
 
+th.task-row, td.task-data {
+  border: none;
+}
+
 li {
     list-style: circle;
 }
@@ -139,7 +143,7 @@ div#tabDiv {
 }
 
 thead th, thead th.locked {
-    background-color: #008B8B;  //was #D8D8D8 now DarkCyan
+    background-color: #B0E0E6;  //was #D8D8D8 now DarkCyan
     border-right: 1px solid var(--fontColor);
     position: relative;
 }
