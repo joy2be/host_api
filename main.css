@@ -48,7 +48,7 @@ table.table-striped {
     border-collapse: collapse;
 }
 
-thead th {
+thead th, thead th.locked {
     background-color: #B0E0E6;
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
@@ -81,4 +81,21 @@ li {
 
 .list {
     list-style: square;
+}
+
+label {
+    font-size: 12pt;
+    font-weight: 700;
+}
+
+.formTitle {
+    font-size: 25pt;
+    font-family: Arial;
+    text-align: left
+}
+
+.btn {
+    width: 96px;
+    height: 29px;
+    font-weight: 700;
 }
