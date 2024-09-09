@@ -49,7 +49,7 @@ table.table-striped {
     border-collapse: collapse;
 }
 
-thead th, thead th.locked {
+thead th {
     background-color: #B0E0E6;
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
@@ -63,8 +63,7 @@ tr.task-row, td.task-data {
     padding: 4px;
 }
 
-tr, td {
-    background-color: var(--bg);
+td {
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
     padding: 4px;
@@ -72,10 +71,16 @@ tr, td {
 
 tr:nth-of-type(even) {
     background-color: #D7F6F6;
+    border: 1px solid var(--fontColor);
+    border-collapse: collapse;
+    padding: 4px;
 }
 
 tr:nth-of-type(odd) {
     background-color: #E0FFFF;
+    border: 1px solid var(--fontColor);
+    border-collapse: collapse;
+    padding: 4px;
 }
 
 li {
@@ -84,21 +89,4 @@ li {
 
 .list {
     list-style: square;
-}
-
-label {
-    font-size: 12pt;
-    font-weight: 700;
-}
-
-.formTitle {
-    font-size: 25pt;
-    font-family: Arial;
-    text-align: left
-}
-
-.btn {
-    width: 96px;
-    height: 29px;
-    font-weight: 700;
 }
