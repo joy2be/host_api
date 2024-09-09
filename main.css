@@ -44,6 +44,7 @@ table.center {
 }
 
 table.table-striped {
+    background-color: var(--bg);
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
 }
@@ -57,12 +58,14 @@ thead th, thead th.locked {
 }
 
 tr.task-row, td.task-data {
+    background-color: var(--bg);
     border: none;
     padding: 4px;
 }
 
 tr, td {
-    border: 1px solid var(--bg);
+    background-color: var(--bg);
+    border: 1px solid var(--fontColor);
     border-collapse: collapse;
     padding: 4px;
 }
