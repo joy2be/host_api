@@ -62,7 +62,7 @@ tr.task-row, td.task-data {
 }
 
 tr, td {
-    border: 1px solid var(--fontColor);
+    border: 1px solid var(--bg);
     border-collapse: collapse;
     padding: 4px;
 }
