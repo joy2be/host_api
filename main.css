@@ -44,6 +44,7 @@ table.center {
 }
 
 table.table-striped {
+	color: var(--black);
     background-color: var(--bg);
     border: 1px solid var(--fontColor);
     border-collapse: collapse;
