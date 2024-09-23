@@ -1,5 +1,6 @@
-[
-	{
+{
+  "items": [
+    {
       "scanid": 1,
       "current_loc": "4001",
       "scanned_itemid": "OR1234-1001",
@@ -13,7 +14,7 @@
       "scanned_itemid": "ST1234-1",
       "scantimestamp": "3/26/2024 14:00:00:00",
       "invtype": 2,
-      "machname": "WIP-MACH #1"
+      "machname": "HURDY GURDY"
     },
     {
       "scanid": 3,
@@ -21,7 +22,7 @@
       "scanned_itemid": "F-123456",
       "scantimestamp": "3/26/2024 14:00:00:00",
       "invtype": 1,
-      "machname": "RM-MACH #1"
+      "machname": "CARD #1"
     },
     {
       "scanid": 4,
@@ -29,7 +30,7 @@
       "scanned_itemid": "ST1234-2",
       "scantimestamp": "3/30/2024 14:22:22:00",
       "invtype": 2,
-      "machname": "WIP-MACH #2"
+      "machname": "CARD #2"
     },
     {
       "scanid": 5,
@@ -37,6 +38,7 @@
       "scanned_itemid": "ST1234-1001",
       "scantimestamp": "4/1/2024 8:00:00:00",
       "invtype": 3,
-      "machname": "FG-MACH #4"
+      "machname": null
     }
- ]
+  ]
+}
