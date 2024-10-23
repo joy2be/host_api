@@ -9,7 +9,7 @@ body {
     color: var(--fontColor);
     text-align: center;
     font-family: Arial;
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .light-theme {
