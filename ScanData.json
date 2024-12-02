@@ -8,6 +8,14 @@
     "machname": null
   },
   {
+    "scanid": 11,
+    "current_loc": "2011",
+    "scanned_itemid": "F-112233",
+    "scantimestamp": "2024-12-02T11:40:00Z",
+    "invtype": 1,
+    "machname": "CARD #1"
+  },
+  {
     "scanid": 2,
     "current_loc": "4901",
     "scanned_itemid": "ST1234-1",
