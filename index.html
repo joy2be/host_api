@@ -1,109 +1,111 @@
-﻿﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="https://joy2be.github.io/host_api" target="_self">
+    <!-- <meta charset="UTF-8"> gives error even though I know this line works on many websites -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="main.css">
-</head>
-<body class="light-theme">
+  </head>
+  <body class="light-theme">
     <br /><br />
     <table align="left" width="100%">
-        <tr class="task-row">
-            <td align="right" class="task-data">
-				<div>
-                <h1>Task List</h1>
-                <p>Tap the circle to switch themes!</p>
-				<button class="btnTheme">Dark</button>
-				</div>
-			</td>
-            <td align="left" class="task-data">
-                <br />
-                <ul>
-                    <li class="list">Add visual styles</li>
-                    <li class="list">Add light and dark themes</li>
-                    <li class="list">Enable switching themes for fun... to learn about Console</li>
-                    <li class="list">Add API host that uses JSON file</li>
-                    <li class="list">Add statement to populate table below... YAY! 9/5/2024</li>
-                    <li class="list">Add code inside the mobile app to call this API</li>
-                    <li>Add code inside the mobile app to update local database using SQL query</li>
-                    <li>Deploy and begin test phase</li>
-                </ul>
-            </td>
-        </tr>
+      <tr class="task-row">
+        <td align="right" class="task-data">
+	      <div>
+            <h1>Task List</h1>
+            <p>Tap the circle to switch themes!</p>
+		    <button class="btnTheme">Dark</button>
+		  </div>
+	    </td>
+        <td align="left" class="task-data">
+          <br />
+          <ul>
+            <li class="list">Add visual styles</li>
+            <li class="list">Add light and dark themes</li>
+            <li class="list">Enable switching themes for fun... to learn about Console</li>
+            <li class="list">Add API host that uses JSON file</li>
+            <li class="list">Add statement to populate table below... YAY! 9/5/2024</li>
+            <li class="list">Add code inside the mobile app to call this API</li>
+            <li class="list">Created backup plan by locally saving text file on device... 12/10/24 All tests great on Android!</li>
+            <li>Add code inside the mobile app to update local database using SQL query</li>
+            <li>Deploy and begin test phase</li>
+          </ul>
+        </td>
+      </tr>
     </table>
     <table class="table-striped">
-        <thead>
-            <tr>
-                <th width="90px">Scan ID</th>
-                <th width="90px">Location</th>
-                <th width="180px">Scanned Item ID</th>
-                <th width="200px">Date/Time Scanned</th>
-                <th width="100px">Inv Type</th>
-                <th width="180px">Machine</th>
-            </tr>
-        </thead>
-        <tbody id="table-body">
+      <thead>
+        <tr>
+          <th width="90px">Scan ID</th>
+          <th width="90px">Location</th>
+          <th width="180px">Scanned Item ID</th>
+          <th width="200px">Date/Time Scanned</th>
+          <th width="100px">Inv Type</th>
+          <th width="180px">Machine</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
 	    <!-- Table rows are added when .json file is processed. Data would be hidden from right-click View Source. -->
-	</tbody>
+	  </tbody>
     </table>
+    <!-- 9/5/24 Removed src="app.js", placed here and ScanData.json file processed! -->
+    <!-- Used switch button to test javascript on Console -->
+    <!-- 9/6/24 fetch('ScanData.json') file did NOT process locally due to CORS origin null error in console -->
+    <!-- 12/11/24 Removed // for comments... Removed the following comments from the fetch of ScanData.json
+          // Get the table body element
+          // Loop through JSON array
+            // Create new row
+            // Add cells to row
+            // Append the row to table body -->
     <script>
-	// <!-- 9/5/24 Removed src="app.js", placed here and ScanData.json file processed! -->
-        // Switch button is to test javascript on Console
-	const switcher = document.querySelector('.btnTheme');
-        switcher.addEventListener('click', function () {
+      const switcher = document.querySelector('.btnTheme');
+      switcher.addEventListener('click', function () {
 	    document.body.classList.toggle('light-theme');
 	    document.body.classList.toggle('dark-theme');
 	    const className = document.body.className;
-            if (className == "light-theme") {
-                this.textContent = "Dark";
-                } else {
-                this.textContent = "Light";
-                }
-                console.log('current class name: ' + className);
+        if (className == "light-theme") {
+          this.textContent = "Dark";
+          } else {
+          this.textContent = "Light";
+          }
+          console.log('current class name: ' + className);
         });
 
-        // Fetch the JSON data from the file   9/6/24 Does NOT process locally due to CORS origin null error in console
         fetch('ScanData.json')
         .then(response => response.json())
         .then(data => {
-            // Get the table body element
-            const tableBody = document.getElementById('table-body');
+          const tableBody = document.getElementById('table-body');
 
-            // Loop through JSON array
-            data.forEach(item => {
-                // Create new row
-                const row = document.createElement('tr');
-				
-                // Add cells to row
-                const scanidCell = document.createElement('td');
-                scanidCell.textContent = item.scanid;
-                row.appendChild(scanidCell);
-                const current_locCell = document.createElement('td');
-                current_locCell.textContent = item.current_loc;
-                row.appendChild(current_locCell);
-                const scanned_itemidCell = document.createElement('td');
-                scanned_itemidCell.textContent = item.scanned_itemid;
-                row.appendChild(scanned_itemidCell);
-                const scantimestampCell = document.createElement('td');
-                scantimestampCell.textContent = item.scantimestamp;
-                row.appendChild(scantimestampCell);
-                const invtypeCell = document.createElement('td');
-                invtypeCell.textContent = item.invtype;
-                row.appendChild(invtypeCell);
-                const machnameCell = document.createElement('td');
-                machnameCell.textContent = item.machname;
-                row.appendChild(machnameCell);
+          data.forEach(item => {
+            const row = document.createElement('tr');
 
-                // Append the row to table body
-                tableBody.appendChild(row);
-            });
+            const scanidCell = document.createElement('td');
+            scanidCell.textContent = item.scanid;
+            row.appendChild(scanidCell);
+            const current_locCell = document.createElement('td');
+            current_locCell.textContent = item.current_loc;
+            row.appendChild(current_locCell);
+            const scanned_itemidCell = document.createElement('td');
+            scanned_itemidCell.textContent = item.scanned_itemid;
+            row.appendChild(scanned_itemidCell);
+            const scantimestampCell = document.createElement('td');
+            scantimestampCell.textContent = item.scantimestamp;
+            row.appendChild(scantimestampCell);
+            const invtypeCell = document.createElement('td');
+            invtypeCell.textContent = item.invtype;
+            row.appendChild(invtypeCell);
+            const machnameCell = document.createElement('td');
+            machnameCell.textContent = item.machname;
+            row.appendChild(machnameCell);
+
+            tableBody.appendChild(row);
+          });
         })
         .catch(error => console.error('Error fetching data:', error));
     </script>
     <noscript>You need to enable JavaScript to view the full site.</noscript>
-</body>
+  </body>
 </html>
